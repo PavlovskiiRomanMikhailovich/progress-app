@@ -11,7 +11,7 @@ class NumberInput {
         const html = await res.text();
         this.root.innerHTML = html;
 
-        const lableElement = this.root.querySelector('.number-input-lable');
+        const lableElement = this.root.querySelector('.number-input-label');
         lableElement.textContent = this.lable;
 
     }

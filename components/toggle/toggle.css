@@ -1,0 +1,45 @@
+.toggle {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.toggle-label {
+    font-size: 20px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.toggle-button {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background-color: var(--toggle-inactive);
+    border-radius: 24px;
+    border: none;
+}
+
+.toggle-thumb {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--base-white);
+    width: 26px;
+    height: 26px;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.25s ease-in-out;
+}
+
+.toggle-button.toggle-button.active {
+    background-color: var(--base-blue);
+}
+
+.toggle-button.active .toggle-thumb {
+  transform: translateX(20px);
+}
+
+.toggle-button:focus {
+  outline: none;
+}

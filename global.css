@@ -1,0 +1,13 @@
+:root{
+    --border: #171717;
+    --base-blue: #005FFF; 
+    --toggle-inactive: #DDE6F1;
+    --base-white: #FFFFFF;
+}
+
+body {
+    font-family: 'Nunito Sans';
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
