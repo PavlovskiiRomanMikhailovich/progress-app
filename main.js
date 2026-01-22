@@ -1,3 +1,3 @@
-const numberRoot = document.querySelector('number-root');
+const numberRoot = document.getElementById('number-root');
 const numberInput = new NumberInput(numberRoot, {});
 numberInput.render();
