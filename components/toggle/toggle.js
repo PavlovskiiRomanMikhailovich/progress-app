@@ -21,11 +21,20 @@ class Toggle {
         this.buttonElement.addEventListener('click', () => {
             this.value = !this.value;
             this.update();
+            this.toggleCallback();
         });
     }
 
     update() {
         this.buttonElement.classList.toggle('active', this.value);
         this.buttonElement.setAttribute('aria-pressed', String(this.value));
+    }
+
+    toggleCallback() {
+        if(this.value) {
+            this.onActive();
+        } else {
+            this.onInactive();
+        }
     }
 }

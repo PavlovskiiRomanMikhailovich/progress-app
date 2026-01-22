@@ -1,0 +1,32 @@
+.progress {
+    width: 135px;
+    height: 135px;
+}
+
+.progress-svg {
+    transform: rotate(-90deg);
+}
+
+.progress-track {
+    stroke-width: 10;
+    stroke: var(--progress-background);
+    fill: none;
+}
+
+.progress-bar {
+    fill: none;
+    stroke: var(--base-blue);
+    stroke-width: 10px;
+    stroke-linecap: square;
+    stroke-dasharray: 339;
+    stroke-dashoffset: 339;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-animated .progress-bar {
+    transition: none;
+}
+
+.hidden {
+    visibility: hidden;
+}

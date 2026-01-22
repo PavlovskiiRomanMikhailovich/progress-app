@@ -3,11 +3,28 @@
     --base-blue: #005FFF; 
     --toggle-inactive: #DDE6F1;
     --base-white: #FFFFFF;
+    --progress-background: #EDF3F6;
 }
 
 body {
     font-family: 'Nunito Sans';
     display: flex;
+    justify-content: center;
+}
+
+.api-block {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.main {
+    display: flex;
+    gap: 45px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
 }
