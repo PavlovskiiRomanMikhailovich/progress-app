@@ -20,7 +20,6 @@ class Progress {
     }
 
     setValue(value) {
-        if (this.isAnimating) return;
         if (value > 100 || value < 0) value = 0;
         const percent = Math.max(0, Math.min(100, value));
         const FULL = 339;
@@ -30,7 +29,6 @@ class Progress {
 
 
     startAnimation() {
-        this.setValue(25);
         this.isAnimating = true;
         this.root.classList.add('progress-animated');
     }
