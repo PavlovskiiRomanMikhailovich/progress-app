@@ -30,3 +30,13 @@
 .hidden {
     visibility: hidden;
 }
+
+@keyframes spin {
+    to {
+        transform: rotate(270deg);
+    }
+}
+
+.progress-animated .progress-svg {
+    animation: spin 1.2s linear infinite;
+}

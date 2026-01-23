@@ -1,3 +1,7 @@
+const FULL = 339;          // длина окружности
+const ARC_PERCENT = 25;   // длина дуги
+const ARC_LENGTH = FULL * ARC_PERCENT / 100;
+
 class Progress {
     constructor(root, options = {}){
         this.root = root;
@@ -16,28 +20,24 @@ class Progress {
     }
 
     setValue(value) {
+        if (this.isAnimating) return;
+        if (value > 100 || value < 0) value = 0;
         const percent = Math.max(0, Math.min(100, value));
         const FULL = 339;
         const offset = FULL - (FULL * percent) / 100;
         this.barElement.style.strokeDashoffset = offset;
     }
 
+
     startAnimation() {
+        this.setValue(25);
         this.isAnimating = true;
         this.root.classList.add('progress-animated');
-        let current = 0;
-
-        this.timerId = setInterval(() => {
-            this.setValue(current);
-            current = current >= 100 ? 0 : current + 1;
-        }, 20);
     }
 
     stopAnimation() {
         this.isAnimating = false;
         this.root.classList.remove('progress-animated');
-        clearInterval(this.timerId);
-        this.timerId = null;
     }
 
     toggleHide() {

@@ -18,15 +18,23 @@ class NumberInput {
         this.inputElement = this.root.querySelector('.number-input-field');
         this.inputElement.min = this.minValue;
         this.inputElement.max = this.maxValue;
+        this.inputElement.inputMode = 'numeric';
 
         this.addListner();
     }
 
     addListner() {
         this.inputElement.addEventListener('input', () => {
-            let value = Number(this.inputElement.value);
-            if(isNaN(value)) return;
-            this.onChange(value);
+            this.inputElement.value = this.inputElement.value.replace(/\D/g, '').slice(0, 3);
+            const currentValue = Number(this.inputElement.value)
+            if (currentValue > this.maxValue || currentValue < this.minValue) {
+                this.onChange(0);
+                this.inputElement.classList.add('error');
+                return;
+            } else {
+                this.inputElement.classList.remove('error');
+                this.onChange(Number(this.inputElement.value));
+            }
         });
     }
 
