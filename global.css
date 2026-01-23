@@ -28,3 +28,9 @@ body {
     width: fit-content;
     height: fit-content;
 }
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+}
